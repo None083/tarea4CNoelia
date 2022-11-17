@@ -20,6 +20,7 @@ public class ClasePersona {
     private double altura;
 
     public ClasePersona() {
+        this.NIF = generaNIF();
     }
 
     public ClasePersona(String nombre, int edad, char sexo, double peso, double altura) {
@@ -103,7 +104,11 @@ public class ClasePersona {
     }
 
     public void setSexo(char sexo) {
-        this.sexo = sexo;
+        if (filtrarSexo(sexo)) {
+            this.sexo = sexo;
+        } else {
+            this.sexo = 'O';
+        }
     }
 
     public void setPeso(double peso) {

@@ -27,7 +27,7 @@ public class MisPersonas {
         juan.darLike(s2);
         System.out.println(s2);
         
-        juan.setSexo('M');
+        juan.setSexo('i');
         System.out.println(juan);
         
         
@@ -36,8 +36,8 @@ public class MisPersonas {
         juan.setEdad(15);
         System.out.println("IMC María " + maria.calcularIMC(0, 0));
         
-        
-        
+        ClasePersona persona1 = ServicioPersonas.solicitarDatosPersona();
+        System.out.println(persona1);
     }
     
     
