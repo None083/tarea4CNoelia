@@ -12,12 +12,12 @@ import java.util.Random;
  */
 public class ClasePersona {
 
-    String nombre;
-    int edad;
-    String nif;
-    char sexo;
-    double peso;
-    double altura;
+    private String nombre;
+    private int edad;
+    private String NIF;
+    private char sexo;
+    private double peso;
+    private double altura;
 
     public ClasePersona() {
     }
@@ -32,16 +32,16 @@ public class ClasePersona {
         } else {
             this.sexo = 'O';
         }
-        this.nif = generaNIF();
+        this.NIF = generaNIF();
+    }
+    
+    public void darLike (ClaseSerie serie){
+        serie.darLike();
     }
 
     public static boolean filtrarSexo(char sexo) {
 
-        if (sexo == 'H' || sexo == 'M' || sexo == 'O') {
-            return true;
-        } else {
-            return false;
-        }
+        return sexo == 'H' || sexo == 'M' || sexo == 'O';
     }
 
     public static String generaNIF() {
@@ -60,11 +60,63 @@ public class ClasePersona {
     }
     
     public boolean esMayorEdad(){
-        if (this.edad >= 18){
-            return true;
-        } else {
-            return false;
-        }
+        
+        return this.edad >= 18;
+    }
+    
+    public float calcularIMC(double peso, double altura){
+        
+        return (float)(this.peso / Math.pow(this.altura, 2));
+        
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public String getNif() {
+        return NIF;
+    }
+
+    public char getSexo() {
+        return sexo;
+    }
+
+    public double getPeso() {
+        return peso;
+    }
+
+    public double getAltura() {
+        return altura;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public void setSexo(char sexo) {
+        this.sexo = sexo;
+    }
+
+    public void setPeso(double peso) {
+        this.peso = peso;
+    }
+
+    public void setAltura(double altura) {
+        this.altura = altura;
+    }
+
+    @Override
+    public String toString() {
+        return "ClasePersona{" + "nombre=" + nombre + ", edad=" + edad + ", NIF=" + NIF + ", sexo=" + sexo + ", peso=" + peso + ", altura=" + altura + '}';
     }
     
     
